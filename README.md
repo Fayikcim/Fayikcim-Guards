@@ -2,4 +2,4 @@
 
 Herkese merhabalar!
 
-Önceden kullandığım guard botlarını yeniden size sunuyorum. Herkese iyi kodlamalar!
+Önceden kullandığım guard botlarını yeniden sizelere sunuyorum. Herkese iyi kodlamalar!

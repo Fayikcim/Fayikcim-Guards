@@ -382,11 +382,11 @@ client3.on("channelUpdate", async (oldChannel, newChannel) => {
   oldChannel.permissionOverwrites.forEach(perm => {let thisPermOverwrites = {}; perm.allow.toArray().forEach(p => { thisPermOverwrites[p] = true;}); perm.deny.toArray().forEach(p => {thisPermOverwrites[p] = false; });
   newChannel.createOverwrite(perm.id, thisPermOverwrites);});
 
-  newChannel.cache.roles.cache.forEach(async function(fayik) {
+  newChannel.guild.cache.roles.cache.forEach(async function(fayik) {
   if(fayik.permissions.has("ADMINISTRATOR") || fayik.permissions.has("BAN_MEMBERS") || fayik.permissions.has("MANAGE_GUILD") || fayik.permissions.has("KICK_MEMBERS") || fayik.permissions.has("MANAGE_ROLES") || fayik.permissions.has("MANAGE_CHANNELS")) {
   fayik.setPermissions(0).catch(err =>{});}});
 
-  newChannel.members.ban(member.id, { reason: `Fayikcim System | İzinsiz Kanal Güncellemek!` }).catch(e => { })
+  newChannel.guild.members.ban(member.id, { reason: `Fayikcim System | İzinsiz Kanal Güncellemek!` }).catch(e => { })
 
   let channel = client3.channels.cache.get(ayarlar.defenderlog)
   if (!channel) return console.log('Kanal Günceleme Koruma Logu Yok!');

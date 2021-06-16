@@ -526,17 +526,11 @@ console.error(err.message)
 
 client1.on('warn', m => console.log(`[WARN - 1] - ${m}`));
 client1.on('error', m => console.log(`[ERROR - 1] - ${m}`));
-process.on('uncaughtException', error => console.log(`[ERROR - 1] - ${error}`));
-process.on('unhandledRejection', (err) => console.log(`[ERROR - 1] - ${err}`));
-
 client2.on('warn', m => console.log(`[WARN - 2] - ${m}`));
 client2.on('error', m => console.log(`[ERROR - 2] - ${m}`));
-process.on('uncaughtException', error => console.log(`[ERROR - 2] - ${error}`));
-process.on('unhandledRejection', (err) => console.log(`[ERROR - 2] - ${err}`));
-
 client3.on('warn', m => console.log(`[WARN - 3] - ${m}`));
 client3.on('error', m => console.log(`[ERROR - 3] - ${m}`));
-process.on('uncaughtException', error => console.log(`[ERROR - 3] - ${error}`));
-process.on('unhandledRejection', (err) => console.log(`[ERROR - 3] - ${err}`));
+process.on('uncaughtException', error => console.log(`[ERROR] - ${error}`));
+process.on('unhandledRejection', (err) => console.log(`[ERROR] - ${err}`));
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
